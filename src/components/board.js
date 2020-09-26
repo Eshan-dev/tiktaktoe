@@ -16,6 +16,8 @@ class Board extends Component{
         isNext: true
     }
 
+    // Create instance of Storage object
+    storage = new Storage()
     //instance of storage object
     handleBoxClick = (index) => {
 
@@ -23,7 +25,7 @@ class Board extends Component{
         const boxes = this.state.boxes.slice();
 
         //current state of history
-        let hisotry = this.history;
+        let history = this.history;
 
         //stop the game if won
         if (utils.findWinnner(boxes) || boxes[index]) {
@@ -116,8 +118,7 @@ class Board extends Component{
 
                     {/*start new game button*/}
                     {winner && <div className="board-footer">
-                        <button className="btn" onClick={this.resetBoard}>Start again</button>
-                        
+                        <button className="btn" onClick={this.resetBoard}>Start new game</button>
                     </div>}
                 </div>
             </div>
