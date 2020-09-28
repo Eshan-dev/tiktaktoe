@@ -1,17 +1,18 @@
-import React from 'react';
 
 
 export class Storage {
-    constructor(storageName= 'gameScoreBoard', initValue=[]) {
+
+    constructor(storageName= 'gameScoreBoard', initValue= '[]') {
+
         this.storageName = storageName;
 
         if(!localStorage.getItem(storageName)) {
             localStorage.setItem(storageName, initValue);
         }
-    };
+    }
 
     getData(){
-        return JSON.parse(localStorage.getItem(this.storageName))
+        return JSON.parse(localStorage.getItem(this.storageName));
     }
 
     update(data) {

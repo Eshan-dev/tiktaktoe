@@ -1,0 +1,40 @@
+.game-wrapper {
+    margin: 0 auto;
+    width: 50%
+}
+
+.board-link {
+    padding-top: 20px;
+}
+
+.board {
+    padding-top: 50px;
+}
+
+.board-row {
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.board-heading {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font: 700 18px / 1.618 sans-serif;
+    text-align: center;
+}
+
+.board-history {
+    margin: 0 auto;
+    padding-top: 50px;
+    width: 70%;
+}
+
+.board-history-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.board-footer {
+    width: 100%;
+}

@@ -16,8 +16,6 @@ export const findWinner = (boxes) => {
     //iterate over winning combinations
     for (var i = 0; i < rows.length; i++) {
         const [a,b,c] = rows[i];
-        console.log(rows[i]);
-        console.log(a, b,c);
         //check if game contains winning combination
         if(boxes[a] && boxes[a] === boxes[b] && boxes[a] === boxes[c]) {
             return boxes[a];

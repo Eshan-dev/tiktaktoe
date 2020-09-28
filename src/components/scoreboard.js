@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import {Storage} from '../storage/storage';
 import {Link} from 'react-router-dom';
+import '../styles/button.css';
+
 
 class ScoreBoard extends Component{
     state = {
-        scoreBoard = []
+        scoreBoard: []
     }
 
     //after component mounts, load any data from storage and update component state
     async componentDidMount() {
         let storage = await new Storage().getData();
         this.setState({
-            scoreBoard = storage
+            scoreBoard: storage
         })
     };
 

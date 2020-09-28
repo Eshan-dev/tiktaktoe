@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 //import score and board
-import {Board} from './components/board';
-import {Score} from './components/scoreboard'
+import Board from './components/board';
+import Score from './components/scoreboard'
 
 class App extends Component {
   render() {

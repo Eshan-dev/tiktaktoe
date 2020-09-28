@@ -5,8 +5,8 @@ import {Storage} from '../storage/storage';
 //import box component
 import {Box} from '../components/box';
 //import utility functions
-import * as utils from '../utils/functions';
-
+import {findWinner, areAllBoxesClicked} from '../utils/functions';
+import '../styles/board.css'
 
 class Board extends Component{
 
@@ -20,20 +20,20 @@ class Board extends Component{
     storage = new Storage()
     //instance of storage object
     handleBoxClick = (index) => {
-
+        console.log(this.state.boxes);
         //get current state of boxes
         const boxes = this.state.boxes.slice();
 
         //current state of history
-        let history = this.history;
+        let history = this.state.history;
 
         //stop the game if won
-        if (utils.findWinnner(boxes) || boxes[index]) {
+        if (findWinner(boxes) || boxes[index]) {
             return;
         };
 
 
-        if (utils.areAllBoxesClicked(boxes) === true) {
+        if (areAllBoxesClicked(boxes) === true) {
             return;
         };
         
@@ -63,9 +63,9 @@ class Board extends Component{
     render() {
 
         //get winner
-        const winner = this.utils.findWinnner(this.state.boxes);
+        const winner = findWinner(this.state.boxes);
         //are all boxes checked?
-        const isFilled = this.utils.areAllBoxesClicked(this.state.boxes);
+        const isFilled = areAllBoxesClicked(this.state.boxes);
         //status
         let status;
 
@@ -79,9 +79,11 @@ class Board extends Component{
         };
 
         return(
-            <div>
+            <div className="game-wrapper">
                 {/*link to scoreboard*/}
-                <Link to="/" className="board-link">Go to scoreboard</Link>
+                <div className="board-link" >
+                    <Link to="/">Go to scoreboard</Link>
+                </div>
 
                 {/*Game board*/}
                 <div className="board-wrapper">
