@@ -1,3 +1,3 @@
 ## Tik Tak Toe
 
-A simple tik tak toe web app game
+A simple Tik Tak Toe Web APP Game
